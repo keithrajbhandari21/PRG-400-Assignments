@@ -1,0 +1,19 @@
+hours = [35, 40, 50, 60, 20, 42]
+
+# Step 1: Filter employees who worked 40+ hours
+eligible_hours = list(filter(lambda h: h >= 40, hours))
+
+# Step 2: Convert to overtime hours
+overtime_hours = list(map(lambda h: h - 40, eligible_hours))
+
+print("Original Hours:", hours)
+print("\nOvertime Table:")
+print("--------------------------------")
+print(" Hours Worked | Overtime Hours ")
+print("--------------------------------")
+
+for h, ot in zip(eligible_hours, overtime_hours):
+    print(f"     {h:<10} |       {ot:<10}")
+
+print("--------------------------------")
+
