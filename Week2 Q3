@@ -1,0 +1,20 @@
+feedback_list = [
+    "Great service!",
+    "The product quality was excellent and delivery was fast.",
+    "Not satisfied.",
+    "Customer support was helpful and friendly."
+]
+
+# Filter feedback with 20+ characters and convert to lowercase
+filtered = [(msg, msg.lower()) for msg in feedback_list if len(msg) >= 20]
+
+# Display results
+print("\nFiltered & Lowercased Feedback:")
+print("---------------------------------------------------------------")
+print(f"{'Original Feedback':<55} | {'Lowercase Version'}")
+print("---------------------------------------------------------------")
+
+for original, lower in filtered:
+    print(f"{original:<55} | {lower}")
+
+print("---------------------------------------------------------------")
