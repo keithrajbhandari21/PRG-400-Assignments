@@ -1,0 +1,18 @@
+prices = [30, 55, 120, 49, 80, 15, 200]
+
+# Step 1: Filter prices >= 50
+filtered_prices = list(filter(lambda p: p >= 50, prices))
+
+# Step 2: Apply 10% discount
+discounted_prices = list(map(lambda p: round(p * 0.9, 2), filtered_prices))
+
+print("Original Prices:", prices)
+print("\nDiscount Table:")
+print("------------------------------------------")
+print(" Original Price | Discounted (10% Off) ")
+print("------------------------------------------")
+
+for original, discounted in zip(filtered_prices, discounted_prices):
+    print(f"     {original:<13} |       {discounted:<15}")
+
+print("------------------------------------------")
