@@ -1,0 +1,20 @@
+scores = [45, 55, 72, 88, 93, 67, 30, 59]
+
+# Step 1: Filter out failing scores (< 50)
+passing_scores = list(filter(lambda s: s >= 50, scores))
+
+# Step 2: Convert remaining scores to letter grades
+grades = list(map(lambda s:
+                  'A' if s >= 90 else
+                  'B' if s >= 80 else
+                  'C' if s >= 70 else
+                  'D' if s >= 60 else
+                  'E',
+                  passing_scores))
+
+print("Original Scores:", scores)
+print("Passing Scores with Grades:")
+
+# Side-by-side output
+for s, g in zip(passing_scores, grades):
+    print(f"  {s} → {g}")
