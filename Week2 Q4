@@ -1,0 +1,26 @@
+# Given dictionary of employee names and salaries
+employees = {
+    "Alice": 55000,
+    "Bob": 62000,
+    "Charlie": 72000,
+    "Diana": 58000,
+    "Ethan": 85000
+}
+
+# Step 1: Filter employees with salary >= $60,000
+filtered_employees = list(filter(lambda emp: emp[1] >= 60000, employees.items()))
+
+# Step 2: Apply a 5% raise to the remaining salaries
+raised_salaries = list(map(lambda emp: (emp[0], round(emp[1] * 1.05, 2)), filtered_employees))
+
+# Step 3: Display results in table format
+print("Original Employee Salaries:", employees)
+print("\nFiltered Employees (>= $60,000) with 5% Raise:")
+print("-------------------------------------------------------------")
+print(" Employee Name | Original Salary | New Salary (5% Raise)")
+print("-------------------------------------------------------------")
+
+for (name, original), (_, new_salary) in zip(filtered_employees, raised_salaries):
+    print(f" {name:<13} | ${original:<15,.2f} | ${new_salary:<15,.2f}")
+
+print("-------------------------------------------------------------")
